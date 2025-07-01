@@ -1,0 +1,51 @@
+document.getElementById(tab).classList.add('active');
+
+      document.getElementById('btnLogin').classList.remove('active');
+      document.getElementById('btnSignup').classList.remove('active');
+      document.getElementById('btn' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
+    }
+
+    function redirectToDashboard() {
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 Welcome to Onecoin</h1>
+    <p>Login or create a secure account</p>
+  </header>
+
+  <div class="container">
+    <div class="tabs">
+      <button id="btnLogin" class="active" onclick="showTab('loginForm')">Login</button>
+      <button id="btnSignup" onclick="showTab('signupForm')">Sign Up</button>
+    </div>
+
+    <div id="loginForm" class="form active">
+      <label for="emailLogin">Email</label>
+      <input type="text" id="emailLogin" placeholder="you@example.com">
+
+      <label for="passwordLogin">Password</label>
+      <input type="password" id="passwordLogin" placeholder="••••••••">
+
+      <button class="submit-btn" onclick="redirectToDashboard()">Login</button>
+    </div>
+
+    <div id="signupForm" class="form">
+      <label for="username">Full Name</label>
+      <input type="text" id="username" placeholder="John Doe">
+
+      <label for="emailSignup">Email</label>
+      <input type="text" id="emailSignup" placeholder="you@example.com">
+
+      <label for="passwordSignup">Password</label>
+      <input type="password" id="passwordSignup" placeholder="Choose a secure password">
+
+      <button class="submit-btn" onclick="redirectToDashboard()">Create Account</button>
+    </div>
+  </div>
+
+</body>
+</html>
